@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{97650D0F-BC77-40D9-AA35-0357EF518833}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Connection_Database</RootNamespace>
-    <AssemblyName>Connection_Database</AssemblyName>
+    <ProjectGuid>{9EEF5173-FFFC-48F6-8440-AAB7556F0A12}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Test</RootNamespace>
+    <AssemblyName>Test</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,21 +43,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Connection.BusinessLogic.Interface\Connection.BusinessLogic.Interface.csproj">
       <Project>{9ff08d2c-688b-40f4-bc59-5ce62f893404}</Project>
       <Name>Connection.BusinessLogic.Interface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Connection.BusinessLogic\Connection.BusinessLogic.csproj">
-      <Project>{8f3d3889-d774-40b5-b0ee-f7d661ed890c}</Project>
-      <Name>Connection.BusinessLogic</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Connection_Database.Interface\Connection_Database.Interface.csproj">
       <Project>{b488da3c-9443-47e6-8f3c-2a343428f809}</Project>
       <Name>Connection_Database.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Connection_Database\Connection_Database.csproj">
+      <Project>{97650d0f-bc77-40d9-aa35-0357ef518833}</Project>
+      <Name>Connection_Database</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
